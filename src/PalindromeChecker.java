@@ -1,13 +1,19 @@
 public static void main(String[] args){
     String input = "madam";
-    boolean flag = true;
+    boolean IsPalindrome = true;
 
-    for(int i = 0; i < input.length()/2; i++){
-        if(input.charAt(i) != input.charAt(input.length() - 1 -i)){
-            flag = false;
+    char[] arr = input.toCharArray();
+    int left = 0;
+    int right = arr.length - 1;
+
+    while(left < right){
+        if(input.charAt(left) != input.charAt(right)){
+            IsPalindrome = false;
             break;
         }
+        left++;
+        right--;
     }
-    System.out.println("Input text:" + input);
-    System.out.println("Is it a Palindrome:" + flag);
+    System.out.println("Input:" + input);
+    System.out.println("Is Palindrome:" + IsPalindrome);
 }
